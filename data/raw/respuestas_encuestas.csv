@@ -1,0 +1,121 @@
+Código único de usuario,Motivación para registrarse,Cómo se enteró de la plataforma,Exploró el catálogo,Ha visto contenido,Razón por no ver contenido,Tipo de contenido de interés,Modalidad de pago preferida,Qué mejorar en la plataforma,Edad,País o región,Nivel de familiaridad con streaming
+USER_001,Quería apoyar el contenido local,A través de influencers o creadores de contenido,No,Sí,,Películas argentinas,Pago por ver,Recomendaciones personalizadas,35-44 años,Argentina,Baja
+USER_002,Curiosidad por el catálogo,Búsqueda en internet,No,No,No encontré contenido interesante,Contenido nuevo o exclusivo,Suscripción mensual con acceso ilimitado,Recomendaciones personalizadas,35-44 años,Uruguay,Baja
+USER_003,Promoción o prueba gratuita,Recomendación de un amigo o familiar,Sí,Sí,,Contenido nuevo o exclusivo,Pago por ver,Compatibilidad con dispositivos o apps,35-44 años,Turquía,Baja
+USER_004,Promoción o prueba gratuita,Recomendación de un amigo o familiar,Sí,No,No encontré contenido interesante,Documentales locales,Pago por ver,Opciones de búsqueda,18-24 años,Argentina,Alta
+USER_005,Quería apoyar el contenido local,A través de influencers o creadores de contenido,Sí,Sí,,Películas argentinas,Una combinación,Compatibilidad con dispositivos o apps,45+ años,Argentina,Baja
+USER_006,Curiosidad por el catálogo,A través de influencers o creadores de contenido,Sí,No,No encontré contenido interesante,Series clásicas,Pago por ver,Recomendaciones personalizadas,45+ años,Chile,Baja
+USER_007,Curiosidad por el catálogo,Búsqueda en internet,Sí,No,La interfaz no era intuitiva,Documentales locales,Pago por ver,Diseño o navegación,18-24 años,Argentina,Alta
+USER_008,Promoción o prueba gratuita,Publicidad en televisión,Sí,Sí,,Películas argentinas,Pago por ver,Catálogo de contenido,18-24 años,Argentina,Alta
+USER_009,Curiosidad por el catálogo,Recomendación de un amigo o familiar,No,No,No tuve tiempo,Series clásicas,Una combinación,Compatibilidad con dispositivos o apps,18-24 años,Turquía,Alta
+USER_010,Me generó nostalgia por producciones argentinas,Publicidad en televisión,Sí,Sí,,Documentales locales,Suscripción mensual con acceso ilimitado,Compatibilidad con dispositivos o apps,45+ años,Argentina,Baja
+USER_011,Quería apoyar el contenido local,Recomendación de un amigo o familiar,No,No,No tuve tiempo,Documentales locales,Una combinación,Compatibilidad con dispositivos o apps,25-34 años,Argentina,Media
+USER_012,Promoción o prueba gratuita,Campaña de marketing online,Sí,Sí,,Contenido nuevo o exclusivo,Una combinación,Diseño o navegación,25-34 años,Turquía,Media
+USER_013,Recomendación de un amigo/familiar,A través de influencers o creadores de contenido,Sí,Sí,,Contenido nuevo o exclusivo,Pago por ver,Opciones de búsqueda,45+ años,Argentina,Baja
+USER_014,Me generó nostalgia por producciones argentinas,A través de influencers o creadores de contenido,Sí,Sí,,Series clásicas,Suscripción mensual con acceso ilimitado,Recomendaciones personalizadas,18-24 años,Argentina,Alta
+USER_015,Promoción o prueba gratuita,A través de influencers o creadores de contenido,Sí,Sí,,Contenido nuevo o exclusivo,Suscripción económica con publicidad,Compatibilidad con dispositivos o apps,25-34 años,Argentina,Media
+USER_016,Quería apoyar el contenido local,Publicidad en televisión,Sí,Sí,,Contenido nuevo o exclusivo,Pago por ver,Opciones de búsqueda,18-24 años,Argentina,Alta
+USER_017,Promoción o prueba gratuita,Campaña de marketing online,No,No,No encontré contenido interesante,Documentales locales,Suscripción mensual con acceso ilimitado,Catálogo de contenido,18-24 años,Argentina,Alta
+USER_018,Curiosidad por el catálogo,Búsqueda en internet,Sí,No,No tuve tiempo,Documentales locales,Suscripción económica con publicidad,Recomendaciones personalizadas,35-44 años,Argentina,Baja
+USER_019,Curiosidad por el catálogo,Publicidad en televisión,Sí,No,La interfaz no era intuitiva,Películas argentinas,Suscripción mensual con acceso ilimitado,Diseño o navegación,18-24 años,Argentina,Alta
+USER_020,Quería apoyar el contenido local,Recomendación de un amigo o familiar,Sí,No,La interfaz no era intuitiva,Documentales locales,Suscripción mensual con acceso ilimitado,Catálogo de contenido,25-34 años,Uruguay,Media
+USER_021,Quería apoyar el contenido local,Búsqueda en internet,Sí,No,No tuve tiempo,Contenido nuevo o exclusivo,Suscripción mensual con acceso ilimitado,Opciones de búsqueda,35-44 años,Argentina,Baja
+USER_022,Curiosidad por el catálogo,Publicidad en televisión,No,No,La interfaz no era intuitiva,Películas argentinas,Suscripción económica con publicidad,Diseño o navegación,45+ años,Chile,Baja
+USER_023,Recomendación de un amigo/familiar,Recomendación de un amigo o familiar,No,Sí,,Películas argentinas,Suscripción mensual con acceso ilimitado,Compatibilidad con dispositivos o apps,45+ años,Argentina,Baja
+USER_024,Promoción o prueba gratuita,A través de influencers o creadores de contenido,Sí,No,La interfaz no era intuitiva,Contenido nuevo o exclusivo,Suscripción mensual con acceso ilimitado,Diseño o navegación,45+ años,Argentina,Baja
+USER_025,Recomendación de un amigo/familiar,Búsqueda en internet,No,Sí,,Series clásicas,Pago por ver,Opciones de búsqueda,18-24 años,Turquía,Alta
+USER_026,Promoción o prueba gratuita,Publicidad en televisión,No,Sí,,Documentales locales,Suscripción económica con publicidad,Catálogo de contenido,35-44 años,Argentina,Baja
+USER_027,Quería apoyar el contenido local,Publicidad en televisión,Sí,No,No encontré contenido interesante,Contenido nuevo o exclusivo,Pago por ver,Diseño o navegación,25-34 años,Argentina,Media
+USER_028,Quería apoyar el contenido local,Publicidad en televisión,Sí,No,La interfaz no era intuitiva,Películas argentinas,Pago por ver,Opciones de búsqueda,45+ años,Uruguay,Baja
+USER_029,Me generó nostalgia por producciones argentinas,Recomendación de un amigo o familiar,No,No,No encontré contenido interesante,Películas argentinas,Suscripción mensual con acceso ilimitado,Diseño o navegación,18-24 años,Argentina,Alta
+USER_030,Me generó nostalgia por producciones argentinas,Recomendación de un amigo o familiar,No,Sí,,Películas argentinas,Suscripción económica con publicidad,Diseño o navegación,35-44 años,Argentina,Baja
+USER_031,Buscaba contenido específico,Campaña de marketing online,Sí,No,No encontré contenido interesante,Documentales locales,Pago por ver,Compatibilidad con dispositivos o apps,35-44 años,Uruguay,Baja
+USER_032,Me generó nostalgia por producciones argentinas,Campaña de marketing online,Sí,Sí,,Documentales locales,Suscripción económica con publicidad,Diseño o navegación,25-34 años,Chile,Media
+USER_033,Promoción o prueba gratuita,A través de influencers o creadores de contenido,No,Sí,,Series clásicas,Pago por ver,Catálogo de contenido,25-34 años,Argentina,Media
+USER_034,Me generó nostalgia por producciones argentinas,Recomendación de un amigo o familiar,Sí,No,La interfaz no era intuitiva,Películas argentinas,Una combinación,Opciones de búsqueda,18-24 años,Turquía,Alta
+USER_035,Buscaba contenido específico,Búsqueda en internet,Sí,Sí,,Series clásicas,Una combinación,Compatibilidad con dispositivos o apps,45+ años,Argentina,Baja
+USER_036,Promoción o prueba gratuita,Búsqueda en internet,No,Sí,,Contenido nuevo o exclusivo,Suscripción mensual con acceso ilimitado,Opciones de búsqueda,25-34 años,Chile,Media
+USER_037,Recomendación de un amigo/familiar,Publicidad en televisión,Sí,No,Prefiero otras plataformas de streaming,Películas argentinas,Pago por ver,Opciones de búsqueda,25-34 años,Argentina,Media
+USER_038,Recomendación de un amigo/familiar,A través de influencers o creadores de contenido,Sí,No,No encontré contenido interesante,Películas argentinas,Suscripción económica con publicidad,Recomendaciones personalizadas,35-44 años,Argentina,Baja
+USER_039,Buscaba contenido específico,Publicidad en televisión,Sí,No,No tuve tiempo,Series clásicas,Pago por ver,Compatibilidad con dispositivos o apps,25-34 años,Argentina,Media
+USER_040,Quería apoyar el contenido local,Búsqueda en internet,Sí,Sí,,Contenido nuevo o exclusivo,Una combinación,Recomendaciones personalizadas,25-34 años,Argentina,Media
+USER_041,Curiosidad por el catálogo,Búsqueda en internet,No,Sí,,Contenido nuevo o exclusivo,Pago por ver,Compatibilidad con dispositivos o apps,18-24 años,Argentina,Alta
+USER_042,Buscaba contenido específico,Recomendación de un amigo o familiar,Sí,Sí,,Películas argentinas,Suscripción económica con publicidad,Recomendaciones personalizadas,25-34 años,Argentina,Media
+USER_043,Buscaba contenido específico,Publicidad en televisión,Sí,No,No encontré contenido interesante,Contenido nuevo o exclusivo,Suscripción económica con publicidad,Recomendaciones personalizadas,45+ años,Argentina,Baja
+USER_044,Curiosidad por el catálogo,Búsqueda en internet,Sí,Sí,,Contenido nuevo o exclusivo,Una combinación,Compatibilidad con dispositivos o apps,45+ años,Argentina,Baja
+USER_045,Quería apoyar el contenido local,Publicidad en televisión,No,No,La interfaz no era intuitiva,Series clásicas,Una combinación,Compatibilidad con dispositivos o apps,45+ años,Argentina,Baja
+USER_046,Curiosidad por el catálogo,Recomendación de un amigo o familiar,No,No,La interfaz no era intuitiva,Películas argentinas,Suscripción mensual con acceso ilimitado,Recomendaciones personalizadas,45+ años,Argentina,Baja
+USER_047,Recomendación de un amigo/familiar,Búsqueda en internet,Sí,Sí,,Películas argentinas,Pago por ver,Opciones de búsqueda,25-34 años,Argentina,Media
+USER_048,Curiosidad por el catálogo,Búsqueda en internet,No,Sí,,Contenido nuevo o exclusivo,Suscripción económica con publicidad,Opciones de búsqueda,45+ años,Argentina,Baja
+USER_049,Me generó nostalgia por producciones argentinas,A través de influencers o creadores de contenido,Sí,No,La interfaz no era intuitiva,Series clásicas,Pago por ver,Opciones de búsqueda,18-24 años,Argentina,Alta
+USER_050,Buscaba contenido específico,A través de influencers o creadores de contenido,Sí,Sí,,Contenido nuevo o exclusivo,Suscripción económica con publicidad,Opciones de búsqueda,18-24 años,Argentina,Alta
+USER_051,Quería apoyar el contenido local,Recomendación de un amigo o familiar,Sí,Sí,,Series clásicas,Suscripción económica con publicidad,Catálogo de contenido,25-34 años,Argentina,Media
+USER_052,Quería apoyar el contenido local,Búsqueda en internet,Sí,No,No tuve tiempo,Películas argentinas,Suscripción mensual con acceso ilimitado,Diseño o navegación,45+ años,Argentina,Baja
+USER_053,Curiosidad por el catálogo,Campaña de marketing online,Sí,No,La interfaz no era intuitiva,Series clásicas,Suscripción mensual con acceso ilimitado,Recomendaciones personalizadas,45+ años,Argentina,Baja
+USER_054,Promoción o prueba gratuita,A través de influencers o creadores de contenido,Sí,No,La interfaz no era intuitiva,Documentales locales,Suscripción mensual con acceso ilimitado,Diseño o navegación,45+ años,Argentina,Baja
+USER_055,Buscaba contenido específico,Recomendación de un amigo o familiar,No,Sí,,Contenido nuevo o exclusivo,Suscripción económica con publicidad,Recomendaciones personalizadas,18-24 años,Uruguay,Alta
+USER_056,Promoción o prueba gratuita,Búsqueda en internet,No,No,No encontré contenido interesante,Documentales locales,Suscripción mensual con acceso ilimitado,Catálogo de contenido,45+ años,Argentina,Baja
+USER_057,Recomendación de un amigo/familiar,Búsqueda en internet,No,Sí,,Series clásicas,Una combinación,Catálogo de contenido,18-24 años,Argentina,Alta
+USER_058,Promoción o prueba gratuita,Recomendación de un amigo o familiar,Sí,Sí,,Contenido nuevo o exclusivo,Pago por ver,Compatibilidad con dispositivos o apps,25-34 años,Argentina,Media
+USER_059,Quería apoyar el contenido local,A través de influencers o creadores de contenido,Sí,Sí,,Documentales locales,Pago por ver,Opciones de búsqueda,25-34 años,Argentina,Media
+USER_060,Curiosidad por el catálogo,Campaña de marketing online,Sí,Sí,,Películas argentinas,Suscripción mensual con acceso ilimitado,Compatibilidad con dispositivos o apps,35-44 años,Argentina,Baja
+USER_061,Promoción o prueba gratuita,A través de influencers o creadores de contenido,Sí,No,No tuve tiempo,Documentales locales,Una combinación,Compatibilidad con dispositivos o apps,35-44 años,Argentina,Baja
+USER_062,Quería apoyar el contenido local,A través de influencers o creadores de contenido,Sí,Sí,,Series clásicas,Suscripción económica con publicidad,Recomendaciones personalizadas,45+ años,Argentina,Baja
+USER_063,Quería apoyar el contenido local,Búsqueda en internet,No,Sí,,Documentales locales,Pago por ver,Diseño o navegación,45+ años,Argentina,Baja
+USER_064,Me generó nostalgia por producciones argentinas,Búsqueda en internet,Sí,Sí,,Series clásicas,Suscripción económica con publicidad,Recomendaciones personalizadas,18-24 años,Argentina,Alta
+USER_065,Buscaba contenido específico,Publicidad en televisión,Sí,No,Prefiero otras plataformas de streaming,Documentales locales,Una combinación,Compatibilidad con dispositivos o apps,25-34 años,Argentina,Media
+USER_066,Quería apoyar el contenido local,A través de influencers o creadores de contenido,Sí,Sí,,Documentales locales,Pago por ver,Diseño o navegación,35-44 años,Argentina,Baja
+USER_067,Curiosidad por el catálogo,Publicidad en televisión,No,Sí,,Contenido nuevo o exclusivo,Una combinación,Compatibilidad con dispositivos o apps,35-44 años,Argentina,Baja
+USER_068,Buscaba contenido específico,Publicidad en televisión,Sí,No,No tuve tiempo,Películas argentinas,Suscripción económica con publicidad,Compatibilidad con dispositivos o apps,18-24 años,Argentina,Alta
+USER_069,Recomendación de un amigo/familiar,A través de influencers o creadores de contenido,Sí,Sí,,Documentales locales,Pago por ver,Catálogo de contenido,45+ años,Turquía,Baja
+USER_070,Promoción o prueba gratuita,Búsqueda en internet,Sí,No,No encontré contenido interesante,Documentales locales,Una combinación,Compatibilidad con dispositivos o apps,18-24 años,Argentina,Alta
+USER_071,Curiosidad por el catálogo,Búsqueda en internet,Sí,Sí,,Series clásicas,Pago por ver,Opciones de búsqueda,25-34 años,Argentina,Media
+USER_072,Quería apoyar el contenido local,A través de influencers o creadores de contenido,Sí,No,No encontré contenido interesante,Películas argentinas,Suscripción económica con publicidad,Compatibilidad con dispositivos o apps,18-24 años,Argentina,Alta
+USER_073,Buscaba contenido específico,Búsqueda en internet,Sí,Sí,,Películas argentinas,Pago por ver,Compatibilidad con dispositivos o apps,45+ años,Argentina,Baja
+USER_074,Buscaba contenido específico,Búsqueda en internet,No,No,La interfaz no era intuitiva,Series clásicas,Una combinación,Catálogo de contenido,35-44 años,Argentina,Baja
+USER_075,Me generó nostalgia por producciones argentinas,Recomendación de un amigo o familiar,Sí,Sí,,Películas argentinas,Pago por ver,Diseño o navegación,25-34 años,Argentina,Media
+USER_076,Recomendación de un amigo/familiar,Campaña de marketing online,No,No,No tuve tiempo,Documentales locales,Suscripción económica con publicidad,Opciones de búsqueda,18-24 años,Argentina,Alta
+USER_077,Quería apoyar el contenido local,A través de influencers o creadores de contenido,Sí,No,Prefiero otras plataformas de streaming,Películas argentinas,Una combinación,Recomendaciones personalizadas,25-34 años,Argentina,Media
+USER_078,Buscaba contenido específico,Recomendación de un amigo o familiar,Sí,No,No encontré contenido interesante,Contenido nuevo o exclusivo,Pago por ver,Compatibilidad con dispositivos o apps,35-44 años,Argentina,Baja
+USER_079,Promoción o prueba gratuita,Campaña de marketing online,Sí,Sí,,Películas argentinas,Pago por ver,Compatibilidad con dispositivos o apps,45+ años,Argentina,Baja
+USER_080,Curiosidad por el catálogo,Recomendación de un amigo o familiar,No,No,La interfaz no era intuitiva,Películas argentinas,Una combinación,Catálogo de contenido,18-24 años,Argentina,Alta
+USER_081,Quería apoyar el contenido local,Recomendación de un amigo o familiar,No,No,No tuve tiempo,Contenido nuevo o exclusivo,Suscripción mensual con acceso ilimitado,Catálogo de contenido,18-24 años,Argentina,Alta
+USER_082,Recomendación de un amigo/familiar,Recomendación de un amigo o familiar,Sí,Sí,,Contenido nuevo o exclusivo,Una combinación,Diseño o navegación,45+ años,Chile,Baja
+USER_083,Curiosidad por el catálogo,Campaña de marketing online,No,No,Prefiero otras plataformas de streaming,Documentales locales,Suscripción mensual con acceso ilimitado,Diseño o navegación,45+ años,Argentina,Baja
+USER_084,Curiosidad por el catálogo,A través de influencers o creadores de contenido,Sí,No,No encontré contenido interesante,Contenido nuevo o exclusivo,Pago por ver,Diseño o navegación,18-24 años,Chile,Alta
+USER_085,Recomendación de un amigo/familiar,A través de influencers o creadores de contenido,Sí,No,No tuve tiempo,Películas argentinas,Pago por ver,Catálogo de contenido,25-34 años,Argentina,Media
+USER_086,Promoción o prueba gratuita,A través de influencers o creadores de contenido,Sí,No,No encontré contenido interesante,Contenido nuevo o exclusivo,Suscripción mensual con acceso ilimitado,Diseño o navegación,35-44 años,Argentina,Baja
+USER_087,Buscaba contenido específico,Campaña de marketing online,Sí,No,No encontré contenido interesante,Películas argentinas,Una combinación,Diseño o navegación,35-44 años,Argentina,Baja
+USER_088,Curiosidad por el catálogo,Búsqueda en internet,No,No,No encontré contenido interesante,Series clásicas,Una combinación,Recomendaciones personalizadas,45+ años,Argentina,Baja
+USER_089,Recomendación de un amigo/familiar,Publicidad en televisión,Sí,Sí,,Películas argentinas,Suscripción económica con publicidad,Opciones de búsqueda,18-24 años,Argentina,Alta
+USER_090,Me generó nostalgia por producciones argentinas,Recomendación de un amigo o familiar,Sí,No,La interfaz no era intuitiva,Películas argentinas,Pago por ver,Diseño o navegación,35-44 años,Argentina,Baja
+USER_091,Buscaba contenido específico,Campaña de marketing online,Sí,No,No encontré contenido interesante,Series clásicas,Suscripción económica con publicidad,Diseño o navegación,25-34 años,Uruguay,Media
+USER_092,Quería apoyar el contenido local,Publicidad en televisión,Sí,Sí,,Películas argentinas,Suscripción mensual con acceso ilimitado,Catálogo de contenido,18-24 años,Argentina,Alta
+USER_093,Promoción o prueba gratuita,Búsqueda en internet,Sí,Sí,,Series clásicas,Una combinación,Catálogo de contenido,18-24 años,Argentina,Alta
+USER_094,Promoción o prueba gratuita,A través de influencers o creadores de contenido,Sí,Sí,,Series clásicas,Una combinación,Recomendaciones personalizadas,25-34 años,Argentina,Media
+USER_095,Me generó nostalgia por producciones argentinas,Campaña de marketing online,No,Sí,,Películas argentinas,Suscripción mensual con acceso ilimitado,Diseño o navegación,18-24 años,Argentina,Alta
+USER_096,Quería apoyar el contenido local,Campaña de marketing online,No,No,La interfaz no era intuitiva,Documentales locales,Suscripción mensual con acceso ilimitado,Catálogo de contenido,18-24 años,Argentina,Alta
+USER_097,Buscaba contenido específico,Campaña de marketing online,No,Sí,,Películas argentinas,Suscripción mensual con acceso ilimitado,Diseño o navegación,25-34 años,Argentina,Media
+USER_098,Promoción o prueba gratuita,Publicidad en televisión,Sí,No,La interfaz no era intuitiva,Series clásicas,Suscripción económica con publicidad,Compatibilidad con dispositivos o apps,25-34 años,Argentina,Media
+USER_099,Promoción o prueba gratuita,Publicidad en televisión,Sí,Sí,,Películas argentinas,Suscripción económica con publicidad,Recomendaciones personalizadas,25-34 años,Argentina,Media
+USER_100,Recomendación de un amigo/familiar,Recomendación de un amigo o familiar,Sí,Sí,,Documentales locales,Suscripción económica con publicidad,Catálogo de contenido,35-44 años,Argentina,Baja
+USER_101,Quería apoyar el contenido local,Campaña de marketing online,Sí,No,No encontré contenido interesante,Documentales locales,Una combinación,Diseño o navegación,18-24 años,Argentina,Alta
+USER_102,Buscaba contenido específico,Búsqueda en internet,Sí,No,No encontré contenido interesante,Contenido nuevo o exclusivo,Una combinación,Recomendaciones personalizadas,18-24 años,Argentina,Alta
+USER_103,Quería apoyar el contenido local,Campaña de marketing online,Sí,No,No encontré contenido interesante,Películas argentinas,Suscripción mensual con acceso ilimitado,Recomendaciones personalizadas,35-44 años,Argentina,Baja
+USER_104,Recomendación de un amigo/familiar,Campaña de marketing online,Sí,Sí,,Documentales locales,Suscripción económica con publicidad,Compatibilidad con dispositivos o apps,35-44 años,Argentina,Baja
+USER_105,Promoción o prueba gratuita,Campaña de marketing online,Sí,No,La interfaz no era intuitiva,Series clásicas,Suscripción económica con publicidad,Diseño o navegación,35-44 años,Argentina,Baja
+USER_106,Buscaba contenido específico,Campaña de marketing online,Sí,Sí,,Documentales locales,Pago por ver,Catálogo de contenido,35-44 años,Chile,Baja
+USER_107,Recomendación de un amigo/familiar,Búsqueda en internet,No,No,No tuve tiempo,Películas argentinas,Pago por ver,Opciones de búsqueda,25-34 años,Argentina,Media
+USER_108,Buscaba contenido específico,A través de influencers o creadores de contenido,No,No,La interfaz no era intuitiva,Series clásicas,Una combinación,Catálogo de contenido,45+ años,Argentina,Baja
+USER_109,Me generó nostalgia por producciones argentinas,Publicidad en televisión,Sí,No,No encontré contenido interesante,Contenido nuevo o exclusivo,Suscripción económica con publicidad,Diseño o navegación,45+ años,Argentina,Baja
+USER_110,Buscaba contenido específico,A través de influencers o creadores de contenido,Sí,No,No encontré contenido interesante,Contenido nuevo o exclusivo,Una combinación,Compatibilidad con dispositivos o apps,18-24 años,Argentina,Alta
+USER_111,Recomendación de un amigo/familiar,Campaña de marketing online,No,No,No encontré contenido interesante,Series clásicas,Suscripción económica con publicidad,Opciones de búsqueda,45+ años,Uruguay,Baja
+USER_112,Buscaba contenido específico,A través de influencers o creadores de contenido,Sí,Sí,,Documentales locales,Suscripción económica con publicidad,Catálogo de contenido,25-34 años,Argentina,Media
+USER_113,Recomendación de un amigo/familiar,Recomendación de un amigo o familiar,Sí,No,No encontré contenido interesante,Documentales locales,Suscripción económica con publicidad,Catálogo de contenido,45+ años,Argentina,Baja
+USER_114,Buscaba contenido específico,Campaña de marketing online,Sí,No,No encontré contenido interesante,Contenido nuevo o exclusivo,Una combinación,Catálogo de contenido,35-44 años,Argentina,Baja
+USER_115,Promoción o prueba gratuita,Búsqueda en internet,No,Sí,,Documentales locales,Una combinación,Compatibilidad con dispositivos o apps,45+ años,Argentina,Baja
+USER_116,Curiosidad por el catálogo,Búsqueda en internet,Sí,No,No tuve tiempo,Series clásicas,Una combinación,Opciones de búsqueda,18-24 años,Chile,Alta
+USER_117,Curiosidad por el catálogo,Recomendación de un amigo o familiar,Sí,No,No encontré contenido interesante,Contenido nuevo o exclusivo,Suscripción mensual con acceso ilimitado,Compatibilidad con dispositivos o apps,35-44 años,Argentina,Baja
+USER_118,Buscaba contenido específico,A través de influencers o creadores de contenido,Sí,Sí,,Películas argentinas,Una combinación,Compatibilidad con dispositivos o apps,45+ años,Argentina,Baja
+USER_119,Buscaba contenido específico,A través de influencers o creadores de contenido,Sí,No,No encontré contenido interesante,Documentales locales,Una combinación,Diseño o navegación,18-24 años,Argentina,Alta
+USER_120,Quería apoyar el contenido local,Campaña de marketing online,Sí,No,No encontré contenido interesante,Películas argentinas,Pago por ver,Diseño o navegación,35-44 años,Uruguay,Baja

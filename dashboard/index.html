@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LatamTV · Exploración de encuestas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.54.1"></script>
+  <style>
+:root {
+  --bg: #ffffff;
+  --bg-elevated: #ffffff;
+  --ink: #12131a;
+  --ink-soft: #5a5d6b;
+  --line: #e6e7ec;
+  --accent: #172186;
+  --accent-soft: #e8e9f4;
+  --warn: #172186;
+  --chart-1: #172186;
+  --chart-2: #2f3aad;
+  --chart-3: #4a55c4;
+  --chart-4: #6b74d4;
+  --chart-5: #8e95e0;
+  --chart-6: #b0b5eb;
+  --radius: 2px;
+  --max: 1120px;
+  --font: "Instrument Sans", system-ui, sans-serif;
+  --display: "Newsreader", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.55;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.page {
+  width: min(var(--max), calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 3.5rem 0 4rem;
+}
+
+.hero {
+  margin-bottom: 2.75rem;
+  animation: rise 0.7s ease both;
+}
+
+.brand {
+  margin: 0 0 0.85rem;
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.hero h1 {
+  margin: 0 0 0.75rem;
+  font-family: var(--display);
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.lede {
+  margin: 0;
+  max-width: 38rem;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.meta {
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-bottom: 2.75rem;
+  animation: rise 0.7s ease 0.08s both;
+}
+
+.kpi {
+  background: var(--bg-elevated);
+  padding: 1.15rem 1.2rem 1.25rem;
+}
+
+.kpi .label {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.kpi .value {
+  margin: 0.45rem 0 0.15rem;
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.kpi .hint {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.section-head {
+  margin-bottom: 1.25rem;
+}
+
+.section-head h2 {
+  margin: 0 0 0.35rem;
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-weight: 550;
+  letter-spacing: -0.015em;
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 40rem;
+}
+
+.insights,
+.panel {
+  margin-bottom: 2.75rem;
+  animation: rise 0.7s ease both;
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.insight {
+  border-top: 2px solid var(--accent);
+  background: var(--bg-elevated);
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.insight h3 {
+  margin: 0 0 0.45rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.insight p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.panel h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 1.75rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.chart {
+  min-height: 300px;
+}
+
+.chart-sm {
+  min-height: 260px;
+}
+
+.chart-lg {
+  min-height: 360px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.tab.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.footer code {
+  font-size: 0.8rem;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .kpis,
+  .insight-grid,
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    width: min(var(--max), calc(100% - 1.5rem));
+    padding-top: 2rem;
+  }
+
+  .kpis,
+  .insight-grid,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <p class="brand">LatamTV</p>
+      <h1>Exploración de respuestas</h1>
+      <p class="lede">
+        Tablero analítico de la encuesta de onboarding: motivos, embudo de
+        activación, fricciones y preferencias de producto.
+      </p>
+      <p class="meta" id="meta"></p>
+    </header>
+
+    <section class="kpis" id="kpis" aria-label="Indicadores clave"></section>
+
+    <section class="insights" aria-labelledby="insights-title">
+      <div class="section-head">
+        <h2 id="insights-title">Lecturas clave</h2>
+        <p>Síntesis del científico de datos a partir de las 11 variables.</p>
+      </div>
+      <div class="insight-grid" id="insights"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="funnel-title">
+      <div class="section-head">
+        <h2 id="funnel-title">Embudo de activación</h2>
+        <p>Del registro al visionado: dónde se pierde al usuario.</p>
+      </div>
+      <div id="chart-funnel" class="chart"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="motives-title">
+      <div class="section-head">
+        <h2 id="motives-title">Motivos y adquisición</h2>
+        <p>Por qué se registran y cómo llegan a la plataforma.</p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3>Motivación para registrarse</h3>
+          <div id="chart-motivation" class="chart"></div>
+        </div>
+        <div>
+          <h3>Canal de adquisición</h3>
+          <div id="chart-channel" class="chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="barriers-title">
+      <div class="section-head">
+        <h2 id="barriers-title">Barreras y contenido</h2>
+        <p>Por qué no ven contenido y qué tipo de título buscan.</p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3>Razón por no ver (solo no-watchers)</h3>
+          <div id="chart-reason" class="chart"></div>
+        </div>
+        <div>
+          <h3>Tipo de contenido de interés</h3>
+          <div id="chart-content" class="chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="product-title">
+      <div class="section-head">
+        <h2 id="product-title">Producto y monetización</h2>
+        <p>Preferencia de pago y pedidos de mejora.</p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3>Modalidad de pago preferida</h3>
+          <div id="chart-payment" class="chart"></div>
+        </div>
+        <div>
+          <h3>Qué mejorar en la plataforma</h3>
+          <div id="chart-improve" class="chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="demo-title">
+      <div class="section-head">
+        <h2 id="demo-title">Demografía</h2>
+        <p>Perfil de quienes respondieron.</p>
+      </div>
+      <div class="grid-3">
+        <div>
+          <h3>Edad</h3>
+          <div id="chart-age" class="chart chart-sm"></div>
+        </div>
+        <div>
+          <h3>País</h3>
+          <div id="chart-country" class="chart chart-sm"></div>
+        </div>
+        <div>
+          <h3>Familiaridad con streaming</h3>
+          <div id="chart-familiarity" class="chart chart-sm"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="conv-title">
+      <div class="section-head">
+        <h2 id="conv-title">Conversión por segmento</h2>
+        <p>% que exploró y % que vio contenido, por dimensión.</p>
+      </div>
+      <div class="tabs" role="tablist" id="conversion-tabs">
+        <button class="tab is-active" data-conv="by_motivation" type="button">Motivación</button>
+        <button class="tab" data-conv="by_channel" type="button">Canal</button>
+        <button class="tab" data-conv="by_age" type="button">Edad</button>
+        <button class="tab" data-conv="by_familiarity" type="button">Familiaridad</button>
+        <button class="tab" data-conv="by_content" type="button">Contenido</button>
+      </div>
+      <div id="chart-conversion" class="chart chart-lg"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="cross-title">
+      <div class="section-head">
+        <h2 id="cross-title">Cruces</h2>
+        <p>Relaciones entre variables para hipótesis de growth.</p>
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3>Motivación × vio contenido</h3>
+          <div id="chart-cross-motivation" class="chart"></div>
+        </div>
+        <div>
+          <h3>Canal × vio contenido</h3>
+          <div id="chart-cross-channel" class="chart"></div>
+        </div>
+        <div>
+          <h3>Edad × tipo de contenido</h3>
+          <div id="chart-cross-age-content" class="chart chart-lg"></div>
+        </div>
+        <div>
+          <h3>Pago × edad</h3>
+          <div id="chart-cross-payment-age" class="chart chart-lg"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="explore-title">
+      <div class="section-head">
+        <h2 id="explore-title">Explorar según visionado</h2>
+        <p>
+          Compará cada variable entre quienes vieron y quienes no vieron
+          contenido (barras agrupadas, % dentro de cada grupo).
+        </p>
+      </div>
+      <div class="tabs" role="tablist" id="explore-tabs">
+        <button class="tab is-active" data-explore="by_motivation" type="button">Motivación</button>
+        <button class="tab" data-explore="by_channel" type="button">Canal</button>
+        <button class="tab" data-explore="by_explored" type="button">Exploró catálogo</button>
+        <button class="tab" data-explore="by_reason" type="button">Barrera</button>
+        <button class="tab" data-explore="by_content" type="button">Contenido</button>
+        <button class="tab" data-explore="by_payment" type="button">Pago</button>
+        <button class="tab" data-explore="by_improve" type="button">Mejoras</button>
+        <button class="tab" data-explore="by_age" type="button">Edad</button>
+        <button class="tab" data-explore="by_country" type="button">País</button>
+        <button class="tab" data-explore="by_familiarity" type="button">Familiaridad</button>
+      </div>
+      <p class="meta" id="explore-meta"></p>
+      <div id="chart-explore" class="chart chart-lg"></div>
+    </section>
+
+    <footer class="footer">
+      <p>Fuente: <code>respuestas_encuestas.csv</code> · ApexCharts</p>
+    </footer>
+  </div>
+
+  <script>
+window.DASHBOARD_DATA = {"meta": {"n": 120, "source": "respuestas_encuestas.csv"}, "kpis": [{"label": "Respuestas", "value": "120", "hint": "usuarios encuestados"}, {"label": "Exploró catálogo", "value": "71%", "hint": "85 de 120"}, {"label": "Vio contenido", "value": "46%", "hint": "55 de 120"}, {"label": "Conversión exploración→visión", "value": "65%", "hint": "55 de 85 exploradores"}], "insights": [{"title": "Embudo de activación", "text": "De 120 registrados, 85 exploraron el catálogo (71%) y 55 vieron contenido (46%). Hay una fuga relevante entre exploración y visionado."}, {"title": "Motivo dominante", "text": "«Quería apoyar el contenido local» concentra 24 respuestas (20%). El registro se mueve más por valor local/promo que por un único driver."}, {"title": "Principal fricción", "text": "Entre quienes no vieron contenido, la barrera #1 es «No encontré contenido interesante» (29 casos). El problema parece más de fit de catálogo/UX que de falta de tiempo."}, {"title": "Canal con mejor conversión", "text": "El canal más frecuente es «A través de influencers o creadores de contenido», pero el mejor watch-rate es «Búsqueda en internet» (55.6%). Priorizar calidad de canal, no solo volumen."}, {"title": "Monetización", "text": "La modalidad preferida es «Pago por ver» (34 votos). No hay consenso fuerte: conviene testear flexibilidad (pago por ver + híbridos)."}, {"title": "Prioridad de producto", "text": "Lo más pedido para mejorar: «Compatibilidad con dispositivos o apps» (30 menciones), seguido de «Diseño o navegación»."}], "funnel": {"labels": ["Registrados", "Exploró catálogo", "Vio contenido"], "values": [120, 85, 55]}, "distributions": {"Motivación para registrarse": {"label": "Motivación", "labels": ["Quería apoyar el contenido local", "Promoción o prueba gratuita", "Buscaba contenido específico", "Curiosidad por el catálogo", "Recomendación de un amigo/familiar", "Me generó nostalgia por producciones argentinas"], "values": [24, 23, 23, 21, 17, 12], "pct": [20.0, 19.2, 19.2, 17.5, 14.2, 10.0]}, "Cómo se enteró de la plataforma": {"label": "Canal de adquisición", "labels": ["A través de influencers o creadores de contenido", "Búsqueda en internet", "Recomendación de un amigo o familiar", "Campaña de marketing online", "Publicidad en televisión"], "values": [28, 27, 23, 22, 20], "pct": [23.3, 22.5, 19.2, 18.3, 16.7]}, "Exploró el catálogo": {"label": "Exploró catálogo", "labels": ["Sí", "No"], "values": [85, 35], "pct": [70.8, 29.2]}, "Ha visto contenido": {"label": "Vio contenido", "labels": ["Sí", "No"], "values": [55, 65], "pct": [45.8, 54.2]}, "Razón por no ver contenido": {"label": "Barrera (no vio)", "labels": ["No encontré contenido interesante", "La interfaz no era intuitiva", "No tuve tiempo", "Prefiero otras plataformas de streaming"], "values": [29, 19, 13, 4], "pct": [44.6, 29.2, 20.0, 6.2]}, "Tipo de contenido de interés": {"label": "Contenido de interés", "labels": ["Películas argentinas", "Documentales locales", "Contenido nuevo o exclusivo", "Series clásicas"], "values": [36, 30, 29, 25], "pct": [30.0, 25.0, 24.2, 20.8]}, "Modalidad de pago preferida": {"label": "Modalidad de pago", "labels": ["Pago por ver", "Una combinación", "Suscripción económica con publicidad", "Suscripción mensual con acceso ilimitado"], "values": [34, 31, 29, 26], "pct": [28.3, 25.8, 24.2, 21.7]}, "Qué mejorar en la plataforma": {"label": "Qué mejorar", "labels": ["Compatibilidad con dispositivos o apps", "Diseño o navegación", "Catálogo de contenido", "Recomendaciones personalizadas", "Opciones de búsqueda"], "values": [30, 28, 22, 20, 20], "pct": [25.0, 23.3, 18.3, 16.7, 16.7]}, "Edad": {"label": "Edad", "labels": ["18-24 años", "25-34 años", "35-44 años", "45+ años"], "values": [34, 28, 26, 32], "pct": [28.3, 23.3, 21.7, 26.7]}, "País o región": {"label": "País", "labels": ["Argentina", "Uruguay", "Chile", "Turquía"], "values": [98, 8, 8, 6], "pct": [81.7, 6.7, 6.7, 5.0]}, "Nivel de familiaridad con streaming": {"label": "Familiaridad streaming", "labels": ["Baja", "Media", "Alta"], "values": [58, 28, 34], "pct": [48.3, 23.3, 28.3]}}, "conversion": {"by_motivation": {"labels": ["Recomendación de un amigo/familiar", "Me generó nostalgia por producciones argentinas", "Promoción o prueba gratuita", "Quería apoyar el contenido local", "Buscaba contenido específico", "Curiosidad por el catálogo"], "n": [17, 12, 23, 24, 23, 21], "explore_rate": [64.7, 75.0, 73.9, 75.0, 82.6, 52.4], "watch_rate": [58.8, 58.3, 56.5, 41.7, 39.1, 28.6]}, "by_channel": {"labels": ["Búsqueda en internet", "A través de influencers o creadores de contenido", "Recomendación de un amigo o familiar", "Publicidad en televisión", "Campaña de marketing online"], "n": [27, 28, 23, 20, 22], "explore_rate": [55.6, 89.3, 60.9, 80.0, 68.2], "watch_rate": [55.6, 50.0, 43.5, 40.0, 36.4]}, "by_age": {"labels": ["25-34 años", "45+ años", "35-44 años", "18-24 años"], "n": [28, 32, 26, 34], "explore_rate": [82.1, 62.5, 76.9, 64.7], "watch_rate": [60.7, 46.9, 38.5, 38.2]}, "by_familiarity": {"labels": ["Media", "Baja", "Alta"], "n": [28, 58, 34], "explore_rate": [82.1, 69.0, 64.7], "watch_rate": [60.7, 43.1, 38.2]}, "by_content": {"labels": ["Contenido nuevo o exclusivo", "Películas argentinas", "Series clásicas", "Documentales locales"], "n": [29, 36, 25, 30], "explore_rate": [75.9, 72.2, 64.0, 70.0], "watch_rate": [51.7, 47.2, 44.0, 40.0]}}, "cross": {"motivation_x_watched": {"rows": ["Buscaba contenido específico", "Curiosidad por el catálogo", "Me generó nostalgia por producciones argentinas", "Promoción o prueba gratuita", "Quería apoyar el contenido local", "Recomendación de un amigo/familiar"], "cols": ["No", "Sí"], "matrix": [[14, 9], [15, 6], [5, 7], [10, 13], [14, 10], [7, 10]], "row_totals": [23, 21, 12, 23, 24, 17], "col_totals": [65, 55]}, "channel_x_watched": {"rows": ["A través de influencers o creadores de contenido", "Búsqueda en internet", "Campaña de marketing online", "Publicidad en televisión", "Recomendación de un amigo o familiar"], "cols": ["No", "Sí"], "matrix": [[14, 14], [12, 15], [14, 8], [12, 8], [13, 10]], "row_totals": [28, 27, 22, 20, 23], "col_totals": [65, 55]}, "age_x_content": {"rows": ["18-24 años", "25-34 años", "35-44 años", "45+ años"], "cols": ["Contenido nuevo o exclusivo", "Documentales locales", "Películas argentinas", "Series clásicas"], "matrix": [[8, 8, 10, 8], [6, 6, 9, 7], [8, 8, 8, 2], [7, 8, 9, 8]], "row_totals": [34, 28, 26, 32], "col_totals": [29, 30, 36, 25]}, "payment_x_age": {"rows": ["Pago por ver", "Suscripción económica con publicidad", "Suscripción mensual con acceso ilimitado", "Una combinación"], "cols": ["18-24 años", "25-34 años", "35-44 años", "45+ años"], "matrix": [[8, 11, 8, 7], [7, 8, 7, 7], [8, 3, 6, 9], [11, 6, 5, 9]], "row_totals": [34, 29, 26, 31], "col_totals": [34, 28, 26, 32]}}, "explore_by_watched": {"by_motivation": {"label": "Motivación", "labels": ["Quería apoyar el contenido local", "Promoción o prueba gratuita", "Buscaba contenido específico", "Curiosidad por el catálogo", "Recomendación de un amigo/familiar", "Me generó nostalgia por producciones argentinas"], "watched": [10, 13, 9, 6, 10, 7], "not_watched": [14, 10, 14, 15, 7, 5], "watched_pct": [18.2, 23.6, 16.4, 10.9, 18.2, 12.7], "not_watched_pct": [21.5, 15.4, 21.5, 23.1, 10.8, 7.7], "n_watched": 55, "n_not_watched": 65}, "by_channel": {"label": "Canal de adquisición", "labels": ["A través de influencers o creadores de contenido", "Búsqueda en internet", "Recomendación de un amigo o familiar", "Campaña de marketing online", "Publicidad en televisión"], "watched": [14, 15, 10, 8, 8], "not_watched": [14, 12, 13, 14, 12], "watched_pct": [25.5, 27.3, 18.2, 14.5, 14.5], "not_watched_pct": [21.5, 18.5, 20.0, 21.5, 18.5], "n_watched": 55, "n_not_watched": 65}, "by_explored": {"label": "Exploró catálogo", "labels": ["Sí", "No"], "watched": [39, 16], "not_watched": [46, 19], "watched_pct": [70.9, 29.1], "not_watched_pct": [70.8, 29.2], "n_watched": 55, "n_not_watched": 65}, "by_reason": {"label": "Barrera (no vio)", "labels": ["No encontré contenido interesante", "La interfaz no era intuitiva", "No tuve tiempo", "Prefiero otras plataformas de streaming"], "watched": [0, 0, 0, 0], "not_watched": [29, 19, 13, 4], "watched_pct": [0.0, 0.0, 0.0, 0.0], "not_watched_pct": [44.6, 29.2, 20.0, 6.2], "n_watched": 0, "n_not_watched": 65}, "by_content": {"label": "Contenido de interés", "labels": ["Películas argentinas", "Documentales locales", "Contenido nuevo o exclusivo", "Series clásicas"], "watched": [17, 12, 15, 11], "not_watched": [19, 18, 14, 14], "watched_pct": [30.9, 21.8, 27.3, 20.0], "not_watched_pct": [29.2, 27.7, 21.5, 21.5], "n_watched": 55, "n_not_watched": 65}, "by_payment": {"label": "Modalidad de pago", "labels": ["Pago por ver", "Una combinación", "Suscripción económica con publicidad", "Suscripción mensual con acceso ilimitado"], "watched": [19, 12, 16, 8], "not_watched": [15, 19, 13, 18], "watched_pct": [34.5, 21.8, 29.1, 14.5], "not_watched_pct": [23.1, 29.2, 20.0, 27.7], "n_watched": 55, "n_not_watched": 65}, "by_improve": {"label": "Qué mejorar", "labels": ["Compatibilidad con dispositivos o apps", "Diseño o navegación", "Catálogo de contenido", "Recomendaciones personalizadas", "Opciones de búsqueda"], "watched": [16, 9, 11, 9, 10], "not_watched": [14, 19, 11, 11, 10], "watched_pct": [29.1, 16.4, 20.0, 16.4, 18.2], "not_watched_pct": [21.5, 29.2, 16.9, 16.9, 15.4], "n_watched": 55, "n_not_watched": 65}, "by_age": {"label": "Edad", "labels": ["18-24 años", "25-34 años", "35-44 años", "45+ años"], "watched": [13, 17, 10, 15], "not_watched": [21, 11, 16, 17], "watched_pct": [23.6, 30.9, 18.2, 27.3], "not_watched_pct": [32.3, 16.9, 24.6, 26.2], "n_watched": 55, "n_not_watched": 65}, "by_country": {"label": "País", "labels": ["Argentina", "Chile", "Uruguay", "Turquía"], "watched": [46, 4, 1, 4], "not_watched": [52, 4, 7, 2], "watched_pct": [83.6, 7.3, 1.8, 7.3], "not_watched_pct": [80.0, 6.2, 10.8, 3.1], "n_watched": 55, "n_not_watched": 65}, "by_familiarity": {"label": "Familiaridad streaming", "labels": ["Baja", "Media", "Alta"], "watched": [25, 17, 13], "not_watched": [33, 11, 21], "watched_pct": [45.5, 30.9, 23.6], "not_watched_pct": [50.8, 16.9, 32.3], "n_watched": 55, "n_not_watched": 65}}, "labels": {"Motivación para registrarse": "Motivación", "Cómo se enteró de la plataforma": "Canal de adquisición", "Exploró el catálogo": "Exploró catálogo", "Ha visto contenido": "Vio contenido", "Razón por no ver contenido": "Barrera (no vio)", "Tipo de contenido de interés": "Contenido de interés", "Modalidad de pago preferida": "Modalidad de pago", "Qué mejorar en la plataforma": "Qué mejorar", "Edad": "Edad", "País o región": "País", "Nivel de familiaridad con streaming": "Familiaridad streaming"}};
+  </script>
+  <script>
+const PALETTE = ["#172186", "#2f3aad", "#4a55c4", "#6b74d4", "#8e95e0", "#b0b5eb", "#0f1660", "#3d48b8"];
+
+const COL = {
+  motivation: "Motivación para registrarse",
+  channel: "Cómo se enteró de la plataforma",
+  reason: "Razón por no ver contenido",
+  content: "Tipo de contenido de interés",
+  payment: "Modalidad de pago preferida",
+  improve: "Qué mejorar en la plataforma",
+  age: "Edad",
+  country: "País o región",
+  familiarity: "Nivel de familiaridad con streaming",
+};
+
+const baseChart = {
+  chart: {
+    fontFamily: "Instrument Sans, system-ui, sans-serif",
+    toolbar: { show: false },
+    animations: {
+      enabled: true,
+      easing: "easeinout",
+      speed: 650,
+    },
+  },
+  dataLabels: { enabled: false },
+  grid: {
+    borderColor: "#e6e7ec",
+    strokeDashArray: 3,
+  },
+  tooltip: {
+    theme: "light",
+    style: { fontSize: "13px" },
+  },
+  legend: {
+    fontSize: "12px",
+    labels: { colors: "#5a5d6b" },
+  },
+};
+
+function truncate(label, max = 28) {
+  return label.length > max ? `${label.slice(0, max - 1)}…` : label;
+}
+
+function barHorizontal(el, dist, color = PALETTE[0]) {
+  const options = {
+    ...baseChart,
+    chart: { ...baseChart.chart, type: "bar", height: 300 },
+    series: [{ name: "Respuestas", data: dist.values }],
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        borderRadius: 0,
+        barHeight: "62%",
+      },
+    },
+    colors: [color],
+    xaxis: {
+      categories: dist.labels.map((l) => truncate(l)),
+      labels: { style: { colors: "#5a5d6b", fontSize: "12px" } },
+    },
+    yaxis: {
+      labels: { style: { colors: "#12131a", fontSize: "12px" }, maxWidth: 180 },
+    },
+    tooltip: {
+      ...baseChart.tooltip,
+      y: {
+        formatter: (val, opts) => {
+          const i = opts.dataPointIndex;
+          return `${val} (${dist.pct[i]}%)`;
+        },
+      },
+    },
+  };
+  new ApexCharts(document.querySelector(el), options).render();
+}
+
+function donut(el, dist, height = 280) {
+  const options = {
+    ...baseChart,
+    chart: { ...baseChart.chart, type: "donut", height },
+    series: dist.values,
+    labels: dist.labels,
+    colors: PALETTE,
+    stroke: { width: 2, colors: ["#ffffff"] },
+    plotOptions: {
+      pie: {
+        donut: {
+          size: "68%",
+          labels: {
+            show: true,
+            name: { fontSize: "12px", color: "#5a5d6b" },
+            value: {
+              fontSize: "22px",
+              fontFamily: "Newsreader, Georgia, serif",
+              fontWeight: 600,
+              color: "#12131a",
+            },
+            total: {
+              show: true,
+              label: "Total",
+              color: "#5a5d6b",
+              formatter: () => dist.values.reduce((a, b) => a + b, 0),
+            },
+          },
+        },
+      },
+    },
+    legend: {
+      ...baseChart.legend,
+      position: "bottom",
+      fontSize: "11px",
+    },
+  };
+  new ApexCharts(document.querySelector(el), options).render();
+}
+
+function funnel(el, data) {
+  const options = {
+    ...baseChart,
+    chart: { ...baseChart.chart, type: "bar", height: 280 },
+    series: [{ name: "Usuarios", data: data.values }],
+    plotOptions: {
+      bar: {
+        borderRadius: 0,
+        columnWidth: "42%",
+        distributed: true,
+        dataLabels: { position: "top" },
+      },
+    },
+    colors: ["#172186", "#4a55c4", "#8e95e0"],
+    dataLabels: {
+      enabled: true,
+      offsetY: -18,
+      style: {
+        fontSize: "13px",
+        fontWeight: 600,
+        colors: ["#12131a"],
+      },
+      formatter: (val, opts) => {
+        const base = data.values[0] || 1;
+        const pct = Math.round((100 * val) / base);
+        return `${val} · ${pct}%`;
+      },
+    },
+    legend: { show: false },
+    xaxis: {
+      categories: data.labels,
+      labels: { style: { colors: "#12131a", fontSize: "13px" } },
+    },
+    yaxis: {
+      labels: { style: { colors: "#5a5d6b", fontSize: "12px" } },
+    },
+  };
+  new ApexCharts(document.querySelector(el), options).render();
+}
+
+let conversionChart = null;
+
+function renderConversion(key, conversion) {
+  const data = conversion[key];
+  const options = {
+    ...baseChart,
+    chart: { ...baseChart.chart, type: "bar", height: 380 },
+    series: [
+      { name: "% exploró", data: data.explore_rate },
+      { name: "% vio contenido", data: data.watch_rate },
+    ],
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        borderRadius: 0,
+        barHeight: "70%",
+      },
+    },
+    colors: ["#8e95e0", "#172186"],
+    xaxis: {
+      categories: data.labels.map((l) => truncate(l, 32)),
+      max: 100,
+      labels: {
+        style: { colors: "#5a5d6b", fontSize: "12px" },
+        formatter: (v) => `${v}%`,
+      },
+    },
+    yaxis: {
+      labels: { style: { colors: "#12131a", fontSize: "12px" }, maxWidth: 200 },
+    },
+    tooltip: {
+      ...baseChart.tooltip,
+      y: {
+        formatter: (val, opts) => {
+          const n = data.n[opts.dataPointIndex];
+          return `${val}% (n=${n})`;
+        },
+      },
+    },
+  };
+
+  if (conversionChart) {
+    conversionChart.updateOptions(options, true, true);
+  } else {
+    conversionChart = new ApexCharts(document.querySelector("#chart-conversion"), options);
+    conversionChart.render();
+  }
+}
+
+function dodgedBars(el, cross, height = 320) {
+  const series = cross.cols.map((col, colIdx) => ({
+    name: col,
+    data: cross.matrix.map((row) => row[colIdx]),
+  }));
+
+  const options = {
+    ...baseChart,
+    chart: { ...baseChart.chart, type: "bar", stacked: false, height },
+    series,
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        borderRadius: 0,
+        barHeight: "70%",
+      },
+    },
+    colors: PALETTE,
+    xaxis: {
+      categories: cross.rows.map((l) => truncate(l, 30)),
+      labels: { style: { colors: "#5a5d6b", fontSize: "12px" } },
+    },
+    yaxis: {
+      labels: { style: { colors: "#12131a", fontSize: "12px" }, maxWidth: 180 },
+    },
+  };
+  new ApexCharts(document.querySelector(el), options).render();
+}
+
+let exploreChart = null;
+
+function renderExplore(key, explore) {
+  const data = explore[key];
+  const meta = document.getElementById("explore-meta");
+  meta.textContent = `${data.label} · vio contenido n=${data.n_watched} · no vio n=${data.n_not_watched}`;
+
+  const options = {
+    ...baseChart,
+    chart: { ...baseChart.chart, type: "bar", stacked: false, height: 400 },
+    series: [
+      { name: "Vio contenido (%)", data: data.watched_pct },
+      { name: "No vio contenido (%)", data: data.not_watched_pct },
+    ],
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        borderRadius: 0,
+        barHeight: "70%",
+      },
+    },
+    colors: ["#172186", "#8e95e0"],
+    xaxis: {
+      categories: data.labels.map((l) => truncate(l, 32)),
+      max: 100,
+      labels: {
+        style: { colors: "#5a5d6b", fontSize: "12px" },
+        formatter: (v) => `${v}%`,
+      },
+    },
+    yaxis: {
+      labels: { style: { colors: "#12131a", fontSize: "12px" }, maxWidth: 200 },
+    },
+    tooltip: {
+      ...baseChart.tooltip,
+      y: {
+        formatter: (val, opts) => {
+          const i = opts.dataPointIndex;
+          const counts = opts.seriesIndex === 0 ? data.watched : data.not_watched;
+          return `${val}% (${counts[i]} respuestas)`;
+        },
+      },
+    },
+  };
+
+  if (exploreChart) {
+    exploreChart.updateOptions(options, true, true);
+  } else {
+    exploreChart = new ApexCharts(document.querySelector("#chart-explore"), options);
+    exploreChart.render();
+  }
+}
+
+function renderKpis(kpis) {
+  const root = document.getElementById("kpis");
+  root.innerHTML = kpis
+    .map(
+      (k) => `
+      <article class="kpi">
+        <p class="label">${k.label}</p>
+        <p class="value">${k.value}</p>
+        <p class="hint">${k.hint}</p>
+      </article>`
+    )
+    .join("");
+}
+
+function renderInsights(insights) {
+  const root = document.getElementById("insights");
+  root.innerHTML = insights
+    .map(
+      (i) => `
+      <article class="insight">
+        <h3>${i.title}</h3>
+        <p>${i.text}</p>
+      </article>`
+    )
+    .join("");
+}
+
+function main() {
+  const data = window.DASHBOARD_DATA;
+  const d = data.distributions;
+
+  document.getElementById("meta").textContent =
+    `${data.meta.n} respuestas · fuente ${data.meta.source}`;
+
+  renderKpis(data.kpis);
+  renderInsights(data.insights);
+  funnel("#chart-funnel", data.funnel);
+
+  barHorizontal("#chart-motivation", d[COL.motivation], PALETTE[0]);
+  barHorizontal("#chart-channel", d[COL.channel], PALETTE[1]);
+  barHorizontal("#chart-reason", d[COL.reason], PALETTE[2]);
+  donut("#chart-content", d[COL.content]);
+  donut("#chart-payment", d[COL.payment]);
+  barHorizontal("#chart-improve", d[COL.improve], PALETTE[3]);
+  donut("#chart-age", d[COL.age], 260);
+  donut("#chart-country", d[COL.country], 260);
+  donut("#chart-familiarity", d[COL.familiarity], 260);
+
+  renderConversion("by_motivation", data.conversion);
+
+  document.querySelectorAll("#conversion-tabs .tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#conversion-tabs .tab").forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      renderConversion(btn.dataset.conv, data.conversion);
+    });
+  });
+
+  dodgedBars("#chart-cross-motivation", data.cross.motivation_x_watched);
+  dodgedBars("#chart-cross-channel", data.cross.channel_x_watched);
+  dodgedBars("#chart-cross-age-content", data.cross.age_x_content, 360);
+  dodgedBars("#chart-cross-payment-age", data.cross.payment_x_age, 360);
+
+  renderExplore("by_motivation", data.explore_by_watched);
+  document.querySelectorAll("#explore-tabs .tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#explore-tabs .tab").forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      renderExplore(btn.dataset.explore, data.explore_by_watched);
+    });
+  });
+}
+
+try {
+  main();
+} catch (err) {
+  console.error(err);
+  document.getElementById("meta").textContent = "No se pudieron cargar los datos.";
+}
+
+  </script>
+</body>
+</html>

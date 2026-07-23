@@ -23,3 +23,15 @@ Exportar resultados:
 python3 main.py --save-all data/processed/allocation_search.csv
 python3 main.py --save-top data/processed/top_allocations.csv
 ```
+
+## Tablero de encuestas
+
+Abrí el HTML autónomo (sin servidor):
+
+[`dashboard/index.html`](dashboard/index.html)
+
+Si actualizás el CSV, regenerá el tablero:
+
+```bash
+python3 dashboard/build.py
+```

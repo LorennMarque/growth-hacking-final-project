@@ -1,0 +1,276 @@
+:root {
+  --bg: #ffffff;
+  --bg-elevated: #ffffff;
+  --ink: #12131a;
+  --ink-soft: #5a5d6b;
+  --line: #e6e7ec;
+  --accent: #172186;
+  --accent-soft: #e8e9f4;
+  --warn: #172186;
+  --chart-1: #172186;
+  --chart-2: #2f3aad;
+  --chart-3: #4a55c4;
+  --chart-4: #6b74d4;
+  --chart-5: #8e95e0;
+  --chart-6: #b0b5eb;
+  --radius: 2px;
+  --max: 1120px;
+  --font: "Instrument Sans", system-ui, sans-serif;
+  --display: "Newsreader", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.55;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.page {
+  width: min(var(--max), calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 3.5rem 0 4rem;
+}
+
+.hero {
+  margin-bottom: 2.75rem;
+  animation: rise 0.7s ease both;
+}
+
+.brand {
+  margin: 0 0 0.85rem;
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.hero h1 {
+  margin: 0 0 0.75rem;
+  font-family: var(--display);
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.lede {
+  margin: 0;
+  max-width: 38rem;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.meta {
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-bottom: 2.75rem;
+  animation: rise 0.7s ease 0.08s both;
+}
+
+.kpi {
+  background: var(--bg-elevated);
+  padding: 1.15rem 1.2rem 1.25rem;
+}
+
+.kpi .label {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.kpi .value {
+  margin: 0.45rem 0 0.15rem;
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.kpi .hint {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.section-head {
+  margin-bottom: 1.25rem;
+}
+
+.section-head h2 {
+  margin: 0 0 0.35rem;
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-weight: 550;
+  letter-spacing: -0.015em;
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 40rem;
+}
+
+.insights,
+.panel {
+  margin-bottom: 2.75rem;
+  animation: rise 0.7s ease both;
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.insight {
+  border-top: 2px solid var(--accent);
+  background: var(--bg-elevated);
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.insight h3 {
+  margin: 0 0 0.45rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.insight p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.panel h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 1.75rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.chart {
+  min-height: 300px;
+}
+
+.chart-sm {
+  min-height: 260px;
+}
+
+.chart-lg {
+  min-height: 360px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+.tab.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.footer code {
+  font-size: 0.8rem;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .kpis,
+  .insight-grid,
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    width: min(var(--max), calc(100% - 1.5rem));
+    padding-top: 2rem;
+  }
+
+  .kpis,
+  .insight-grid,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
